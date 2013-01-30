@@ -6,7 +6,7 @@
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/webflow-config
-           http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd">
+           http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd">
 
 	<!-- Executes flows: the entry point into the Spring Web Flow system -->
 	<webflow:flow-executor id="flowExecutor">
