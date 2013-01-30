@@ -8,22 +8,9 @@
 		Also see ../parent-flow.xml. 
 	-->
 
-	<var name="message" class="java.lang.String" />
-	
-	<on-start>
-		<set name="flashScope.message" value="'Press Start to begin polling...'" />
-	</on-start>
-
 	<view-state id="view">
-		<transition on="poll">
-			<set name="requestScope.message" value="new java.util.Date()" />
-		</transition>
-		<transition on="start">
-			<set name="requestScope.message" value="'Starting...'" />
-		</transition>
-		<transition on="stop">
-			<set name="requestScope.message" value="'Stopped...'" />
-		</transition>
+		<transition on="start" />
+		<transition on="stop" />
 	</view-state>
 
 </flow>

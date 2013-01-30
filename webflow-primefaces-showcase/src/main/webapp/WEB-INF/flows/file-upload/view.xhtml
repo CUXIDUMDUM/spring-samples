@@ -3,7 +3,7 @@
 	    		xmlns:ui="http://java.sun.com/jsf/facelets"
 	  			xmlns:h="http://java.sun.com/jsf/html"
 	  			xmlns:f="http://java.sun.com/jsf/core"
-	  			xmlns:p="http://primefaces.prime.com.tr/ui"
+	  			xmlns:p="http://primefaces.org/ui"
 				template="/WEB-INF/layouts/standard.xhtml">
 
 <ui:define name="title">Ajax With PrimeFaces CommandButton</ui:define>
@@ -18,16 +18,9 @@
 </ui:define>
 
 <ui:define name="content">
-<h:form>
-	<p class="error large">
-		This use case does not work presently.<br/>
-		<a href="http://code.google.com/p/primefaces/issues/detail?id=963">http://code.google.com/p/primefaces/issues/detail?id=963</a>.
-	</p>
-	<p class="prepend-top">
-		<p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"
-			allowTypes="*.jpg;*.png;*.gif;" description="Images"/>
-	</p>
-	<hr/>
+<h:form enctype="multipart/form-data">
+	<p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"
+		allowTypes="/(\.|\/)(gif|jpe?g|png)$/" description="Images"/>
     <p:commandButton value="Exit" action="exit" />   
 </h:form>
 </ui:define>

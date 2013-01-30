@@ -45,7 +45,7 @@
 	</logger>
 
 	<logger name="org.primefaces">
-		<level value="info" />
+		<level value="debug" />
 	</logger>
 
 	<!-- Root Logger -->

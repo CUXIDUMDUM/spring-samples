@@ -3,7 +3,7 @@
 	    		xmlns:ui="http://java.sun.com/jsf/facelets"
 	  			xmlns:h="http://java.sun.com/jsf/html"
 	  			xmlns:f="http://java.sun.com/jsf/core"
-	  			xmlns:p="http://primefaces.prime.com.tr/ui"
+	  			xmlns:p="http://primefaces.org/ui"
 				template="/WEB-INF/layouts/standard.xhtml">
 
 <ui:define name="title">Polling</ui:define>
@@ -19,26 +19,25 @@
 
 <ui:define name="content">
 <h:form>
-	<h:panelGroup id="content" layout="block" styleClass="notice">
+	<h:panelGroup id="contentPanel" layout="block" styleClass="notice">
 		<h:outputLabel for="message" value="Current Time: " styleClass="large" />
 		<hr/>
-		<h:outputText id="message" value="${message}" styleClass="large alt" />
+		<h:outputText id="message" value="#{currentTimeBean.time}" styleClass="large alt" />
 	</h:panelGroup>
 	<br/>
-	<p>
-		<p:poll widgetVar="poller" interval="1" action="poll" update="content" autoStart="false" />
-		<p:commandButton value="Start" action="start" update="content" onclick="poller.start()" />
-		<p:commandButton value="Stop" action="stop" update="content" onclick="poller.stop()" />
+	<div>
+		<p:poll widgetVar="poller" interval="1" update="contentPanel" autoStart="false" />
+		<p:commandButton value="Start" action="start" update="contentPanel" onclick="poller.start()" />
+		<p:commandButton value="Stop" action="stop" update="contentPanel" onclick="poller.stop()" />
 		<p:commandButton value="Exit" action="exit" /><br/>
 	<hr/>
 <pre>
-<span class="alt">&lt;p:poll widgetVar="poller" interval="1" action="poll" update="content" autoStart="false"/&gt;</span>
-<span class="alt">&lt;p:commandButton value="Start" action="start" update="content" onclick="poller.start()"/&gt;</span>
-<span class="alt">&lt;p:commandButton value="Stop" action="stop" update="content" onclick="poller.stop()"/&gt;</span>
+<span class="alt">&lt;p:poll widgetVar="poller" interval="1" update="contentPanel" autoStart="false"/&gt;</span>
+<span class="alt">&lt;p:commandButton value="Start" action="start" update="contentPanel" onclick="poller.start()"/&gt;</span>
+<span class="alt">&lt;p:commandButton value="Stop" action="stop" update="contentPanel" onclick="poller.stop()"/&gt;</span>
 </pre>		
-	</p>
+	</div>
 </h:form>
-
 </ui:define>
 
 </ui:composition>

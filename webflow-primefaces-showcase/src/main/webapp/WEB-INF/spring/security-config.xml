@@ -4,9 +4,9 @@
        xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
            http://www.springframework.org/schema/security
-           http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 	<!-- 
 		Configure Spring Security 
@@ -23,16 +23,16 @@
 		Define local authentication provider, a real app would use an external provider (JDBC, LDAP, CAS, etc)
 		
 		usernames/passwords are:
-			keith/melbourne
-			rossen/london
+			joe/joe1
+			pete/pete1
 	-->
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:password-encoder hash="md5" />
 			<security:user-service>
-				<security:user name="keith" password="417c7382b16c395bc25b5da1398cf076" 
+				<security:user name="joe" password="bf403351dfb2ae819874163aff25a49c" 
 					authorities="ROLE_USER, ROLE_APPLE_USER" />
-				<security:user name="rossen" password="bc180dbc583491c00f8a1cd134f7517b" 
+				<security:user name="pete" password="5d2ea1f70185e4357183bb9c00187219" 
 					authorities="ROLE_USER, ROLE_ANDROID_USER" />
 			</security:user-service>
 		</security:authentication-provider>
